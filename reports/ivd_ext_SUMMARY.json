@@ -1,0 +1,17 @@
+{
+ "delta_range": [
+  0.00128,
+  0.05
+ ],
+ "phi_range": [
+  0,
+  3.141592653589793
+ ],
+ "strips": 77,
+ "cells": 10560,
+ "fails": 0,
+ "min_slack": 2.556977403897313e-06,
+ "max_eta": 0.000989760376299634,
+ "secs": 83.3,
+ "verdict": "CERTIFIED interval-delta: 0 FAILS over the continuum"
+}

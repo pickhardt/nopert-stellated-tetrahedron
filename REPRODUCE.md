@@ -85,16 +85,24 @@ The high-δ det-dual region is checked separately with `dk_verify.py MANIFEST.js
 
 ---
 
-## Analytic constants of the local theorem (A_delta, C4)
+## The (SB-box) delta-continuum + analytic constant C4
 
-Two analytic constants are proved by their own exact-interval certificates (paper §15.6, §13.4):
+The (SB-box) extension (paper §15.6) is certified over the full **delta-continuum** by a direct
+interval-delta sweep (the same two-symbol Taylor-form / WS-2 dual-weight kernel as the base sweep;
+the residual is linear in the flags, so it stays tight over delta-intervals). The one analytic
+constant of the local theorem, the order-4 Taylor-tail C4, is proved by its own exact-interval
+certificate (paper §13.4):
 
 ```bash
-python adelta_run_all.py        # A_delta <= 8 < 16  (delta-continuum; ~17M cells, 0 unresolved)
+python ivd_extension_sweep.py   # SB-box delta-continuum [1.28e-3, 5e-2] x [0,pi]: 10,560 cells, 0 fails
 python c4_taylor.py             # C4 <= 53 < 60      (order-4 tail; per-config ~52.99, ~mins)
 ```
-**Expected:** `adelta_out/SUMMARY.json` records `A_delta_bound <= 8.0` with `unres: 0`; `c4_taylor_out.json`
-records `C4_bound <= 53` (`verdict: PROVED C4 <= 52.998 < 60`). Both are consumed by `assembly_verify.py`.
+**Expected:** `ivd_ext_out/SUMMARY.json` records `fails: 0`, `min_slack ~2.6e-6`, `max_eta ~9.9e-4`
+(`verdict: CERTIFIED interval-delta: 0 FAILS over the continuum`); `c4_taylor_out.json` records
+`C4_bound <= 53` (`verdict: PROVED C4 <= 52.998 < 60`). Both are consumed by `assembly_verify.py`.
+(The earlier `adelta_run_all.py` flag-acceleration bound `A_delta <= 8`, and the 30 point-delta
+`sbbox_ext/` manifests, remain in the bundle as an independent cross-check of the continuum sweep;
+they are no longer load-bearing.)
 
 ## IN-4 — assembly (the single top-level check)
 

@@ -6,7 +6,7 @@ top-level script, `assembly_verify.py`, consumes the four verified inputs and re
 verdict.
 
 Everything here is reproducible from source. You have two ways to get the certificate manifests
-(~2 GB), which are not stored in this repo:
+(a few GB), which are not stored in this repo:
 
 - **Download the pre-built manifests** (fastest — verify in ~1.5 h):
   ```bash
@@ -27,7 +27,7 @@ some point. From then on, you will have to regenerate them yourself.
 
 ## The proof in one paragraph
 
-Non-Rupertness of $\mathcal{P}_{11/20}$ is reduced (Theorem GA, proved analytically in the paper) to
+Non-Rupertness of $\mathcal{P}_{11/20}$ is reduced (Theorem GA) to
 four finite, certified inputs:
 
 | Input | What it certifies | Generator | Verifier | Manifest |
@@ -43,12 +43,14 @@ dyadic tiling, zero unclosed cells, and a re-execution of the stored per-cell ce
 only the interval-arithmetic core (`fast_interval` / `tm2` / `dk_kernel`) with the generator, not the
 generator's search/selection logic.
 
-The two analytic constants of the local theorem are proved by their own exact-interval certificates:
-the $\delta$-continuum constant $A_\delta \le 8 < 16$ (`adelta_run_all.py`) and the order-4 Taylor-tail
-constant $C_4 \le 53 < 60$ (`c4_taylor.py`); `assembly_verify.py` checks both. See
-[`REPRODUCE.md`](REPRODUCE.md).
+The (SB-box) $\delta$-continuum is certified by a direct interval-$\delta$ sweep
+(`ivd_extension_sweep.py`: 10,560 cells, 0 fails over $[1.28\times10^{-3},5\times10^{-2}]\times[0,\pi]$),
+and the one analytic constant of the local theorem, the order-4 Taylor-tail constant $C_4 \le 53 < 60$,
+is proved by its own exact-interval certificate (`c4_taylor.py`); `assembly_verify.py` checks both.
+(The earlier flag-acceleration bound $A_\delta \le 8$ via `adelta_run_all.py` and the point-$\delta$
+manifests remain as an independent cross-check, no longer load-bearing.) See [`REPRODUCE.md`](REPRODUCE.md).
 
-This artifact contains only the code and certificates; the paper is distributed separately.
+This artifact contains only the code and certificates.
 
 ## Layout
 

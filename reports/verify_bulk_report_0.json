@@ -1,0 +1,16 @@
+{
+ "n_rows": 1534,
+ "chunk": 0,
+ "nchunk": 1,
+ "eta_budget": 0.0019999999999999974,
+ "max_eta_recorded": 0.0019853775276760894,
+ "min_slack_recorded": 1.181202164383596e-06,
+ "n_strips": 25,
+ "tiling": "EXACT-PASS",
+ "n_replayed": 1534,
+ "n_bad": 0,
+ "n_hairline": 0,
+ "min_slack_replay": 1.1811915409918898e-06,
+ "max_eta_replay": 0.001985369034062827,
+ "seconds": 42.6157009601593
+}
