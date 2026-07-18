@@ -1,0 +1,23 @@
+# regenerated certificate manifests (rebuild via REPRODUCE.md; do not commit — ~2 GB)
+code/dg_full/
+code/wallfix_out/
+code/dk_full/
+code/recover_out/
+code/sf_shards/
+code/sbbox_ext/
+code/*.jsonl
+code/*.jsonl.gz
+# build artifacts
+code/*.so
+code/*.c
+code/build/
+**/__pycache__/
+rust/**/target/
+.DS_Store
+
+# paper build artifacts
+paper_build.log
+_pdfhead.tex
+paper.aux
+paper.log
+paper.out

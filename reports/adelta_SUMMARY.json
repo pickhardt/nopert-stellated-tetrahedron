@@ -1,0 +1,14 @@
+{
+ "A_delta_bound": 7.999999252630951,
+ "argmax": [
+  0.0018771875000000013,
+  0.43833501013832193
+ ],
+ "acc": 8525999,
+ "excl": 780,
+ "cells": 17031718,
+ "unres": 0,
+ "shards": 390,
+ "secs": 5563.314616918564,
+ "verdict": "PROVED A_delta<=8.0000 < 16 (ladder-closing), 0 unresolved"
+}

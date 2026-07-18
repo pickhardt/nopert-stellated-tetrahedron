@@ -1,0 +1,9 @@
+{
+ "shards": 1024,
+ "aggregate": {
+  "cert": 986870,
+  "defer": 63,
+  "wall": 319520
+ },
+ "note": "IN-2 bulk depth grid; per-shard stats aggregated"
+}

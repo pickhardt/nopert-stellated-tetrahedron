@@ -1,0 +1,16 @@
+=== FULL V4 re-execution started Mon Jul 13 20:38:21 PDT 2026 ===
+--- IN-3 recovery layer (verify_recover --full) ---
+recover shards: 9 | fix file: True
+V1 coverage: stuck=809815 src=809815 missing=0 extra=0  PASS
+V2 dyadic-tiling: top-cells=809815 bad=0  PASS
+V3 status: leaves=1038991 unclosed-fail=0 (fix-closed ok)  PASS
+V4 re-exec (FULL 1039214 of 1039214 cert leaves, jobs=9): bad=0  PASS
+------------------------------------------------------------
+RECOVER-LAYER VERDICT: PASS
+--- IN-2 wall layer (verify_wallfix --full) ---
+V1 coverage: dg wall cells=319520, wf top cells=319520, missing=0 extra=0 PASS
+V2/V3 per-src: srcs=319520 closed=319520 unclosed=0 (live/partial), dg-wall not yet seen=0 PASS
+  rc=0.005 backed by manifest_sbbox_bulk_2.6e-03.json: PASS
+V4 citations: 11035 rows, bad=0 PASS
+V4 re-exec (FULL 1710874 of 1710874, jobs=9): bad=0 PASS
+=== FULL V4 DONE Mon Jul 13 21:32:57 PDT 2026 ===

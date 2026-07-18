@@ -1,0 +1,26 @@
+{
+ "C4_bound": 52.9979,
+ "target": 60.0,
+ "headroom": 7.002,
+ "per_config": {
+  "pentA": {
+   "bound": 52.9974,
+   "cells": 6821,
+   "maxdepth_hit": 0
+  },
+  "hex1": {
+   "bound": 52.9791,
+   "cells": 3613,
+   "maxdepth_hit": 0
+  },
+  "pentB": {
+   "bound": 52.9979,
+   "cells": 3015,
+   "maxdepth_hit": 0
+  }
+ },
+ "rho0": 0.001,
+ "tail_k9_majorant": 1e-05,
+ "method": "rigorous interval delta-Taylor of the true SF constraint (matrix-power exp series, no special functions); tight rows (SF.EV labels) only; doubled-vertex short edge handled by delta-factoring; k>=9 tail via c4_lemma majorant",
+ "verdict": "PROVED C4 <= 52.998 < 60 (residual b closed)"
+}

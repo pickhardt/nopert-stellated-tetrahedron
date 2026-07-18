@@ -1,0 +1,11 @@
+{
+ "verdict": "PASS",
+ "cells": 345159,
+ "fails": 0,
+ "replay_bad": 0,
+ "shards": 230,
+ "wall_defer": [
+  1
+ ],
+ "note": "combined from 9 sharded verify_sf runs (full replay, 0 bad)"
+}

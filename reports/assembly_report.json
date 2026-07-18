@@ -1,0 +1,72 @@
+{
+ "inputs": {
+  "IN-1a SB-box": {
+   "status": "PASS",
+   "rungs": 30,
+   "note": "tiling gap-free + margin>=MOD across delta in [5.12e-3,5e-2]"
+  },
+  "IN-1b SF": {
+   "status": "PASS",
+   "cells": 345159,
+   "fails": 0,
+   "wall_defer": 1,
+   "note": "verify_sf VERDICT PASS; wall cells -> Section 15.3 module"
+  },
+  "IN-2 depth grid": {
+   "status": "PASS",
+   "cert": 986870,
+   "defer": 63,
+   "wall": 319520,
+   "wall_processed": 319520,
+   "wall_fail": 0,
+   "note": "986870 cells certified d_lo>0 (bulk); 63 defer(->Lemma 6'); all 319520 WALL cells discharged by wallfix_out (wall2d+w5+subdiv, 0 fail rows) and re-checked by verify_wallfix.py (V1 coverage / V2-V3 exact tiling / V4 citations+re-exec: PASS)"
+  },
+  "IN-3 far/det-dual (high delta>=1.5e-2)": {
+   "status": "PASS",
+   "note": "matched-grid chunk re-verified BAD=0 VERDICT PASS"
+  },
+  "IN-3 low delta [6e-3,7.6e-3] flat-margin band": {
+   "status": "PASS",
+   "stuck": 809815,
+   "note": "all 809,815 dk_full stuck cells recovered (gamma-refine+adaptive+LP, margin_lp>0 everywhere) and re-verified by verify_recover.py (V1 coverage / V2 dyadic tiling / V3 zero unclosed fails / V4 certify_cell re-exec: VERDICT PASS)"
+  },
+  "IN-4 assembly verifier": {
+   "status": "PASS",
+   "note": "this script: cross-manifest ties + interface inequalities; consumes IN-1..IN-3 verifiers"
+  }
+ },
+ "interfaces": {
+  "[S1] window/cylinder straddle (rho0- < rho0)": {
+   "status": "PASS",
+   "lhs": 0.0008,
+   "rhs": 0.001
+  },
+  "[S2] box/tube handoff (b_Pi/M_B > r_b, rescaled inner coord)": {
+   "status": "PASS",
+   "reach": 0.01845,
+   "r_b": 0.0138
+  },
+  "[S3] box/annulus overlap (delta_lo_dk <= delta_hi_sb)": {
+   "status": "PASS",
+   "delta_lo_dk": 0.015,
+   "delta_hi_sb": 0.05
+  },
+  "[S4] rotation cap sigma0 in tube": {
+   "status": "PASS",
+   "sigma0": 0.0427
+  }
+ },
+ "verdict": "COMPLETE (all inputs verified, interfaces gap-free)",
+ "analytic_constants": {
+  "A_delta (delta-continuum)": {
+   "status": "PASS",
+   "bound": 8.0,
+   "note": "A_delta <= 8 < 16 (ladder-closing), 0 unresolved [10]"
+  },
+  "C4 (order-4 tail)": {
+   "status": "PASS",
+   "bound": 52.998,
+   "note": "C4 <= 53 < 60 (interval delta-Taylor cert; true per-row ~38) [11]"
+  }
+ }
+}

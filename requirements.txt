@@ -1,0 +1,6 @@
+# Python 3.10+  (verified on 3.14).  Pure-python by default; Cython optional (see build_ext.py).
+numpy>=1.24
+scipy>=1.10
+sympy>=1.12
+# Optional, ~5x speedup on the interval kernels:
+Cython>=3.0
